@@ -17,7 +17,7 @@ function App() {
                   <nav className='headerNav'>
                       <ul className="headerRoutes">
                           <li>
-                              <Link to="/" className='headerRoutesItem'>Home</Link>
+                              <Link to="/applications" className='headerRoutesItem'>Home</Link>
                           </li>
                           <li>
                               <Link to="/applications" className='headerRoutesItem'>Входящие заявки</Link>
@@ -28,17 +28,11 @@ function App() {
                       </ul>
                   </nav>
               </header>
-
-              {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
               <Switch>
                   <Route path="/finishedTasks">
                       <FinishedApplicationsPage/>
                   </Route>
                   <Route path="/applications">
-                      <ApplicationsPage/>
-                  </Route>
-                  <Route path="/">
                       <ApplicationsPage/>
                   </Route>
               </Switch>
