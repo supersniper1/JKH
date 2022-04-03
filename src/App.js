@@ -6,8 +6,8 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import ApplicationsPage from "./components/aplications/ApplicationsPage";
-import FinishedApplicationsPage from "./components/finishedApplications/finishedApplicationsPage";
+import ApplicationsPage from "./pages/aplications/ApplicationsPage";
+import FinishedApplicationsPage from "./pages/finishedApplications/finishedApplicationsPage";
 
 function App() {
   return (
