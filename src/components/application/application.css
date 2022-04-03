@@ -1,0 +1,27 @@
+.applicationImage {
+    width: 55px;
+    height: 55px;
+}
+.application {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.applicationImages {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.applicationImagesRow {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+.applicationText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
