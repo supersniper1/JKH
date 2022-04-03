@@ -6,6 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import ApplicationsPage from "./components/aplications/ApplicationsPage";
 
 function App() {
   return (
@@ -17,10 +18,10 @@ function App() {
                           <Link to="/">Home</Link>
                       </li>
                       <li>
-                          <Link to="/about">About</Link>
+                          <Link to="/finishedTasks">Выполненные заявки</Link>
                       </li>
                       <li>
-                          <Link to="/users">Users</Link>
+                          <Link to="/applications">Входящие заявки</Link>
                       </li>
                   </ul>
               </nav>
@@ -28,31 +29,19 @@ function App() {
               {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
               <Switch>
-                  <Route path="/about">
+                  <Route path="/finishedTasks">
                       <About />
                   </Route>
-                  <Route path="/users">
-                      <Users />
+                  <Route path="/applications">
+                      <ApplicationsPage/>
                   </Route>
                   <Route path="/">
-                      <Home />
+                      <ApplicationsPage/>
                   </Route>
               </Switch>
           </div>
       </Router>
   );
-}
-
-function Home() {
-    return <h2>Home</h2>;
-}
-
-function About() {
-    return <h2>About</h2>;
-}
-
-function Users() {
-    return <h2>Users</h2>;
 }
 
 export default App;
