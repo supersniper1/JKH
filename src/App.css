@@ -23,6 +23,9 @@ header {
 .headerRoutesItem {
     text-decoration: none;
 }
-li {
-
+button {
+    cursor: pointer;
+}
+select {
+    cursor: pointer;
 }
