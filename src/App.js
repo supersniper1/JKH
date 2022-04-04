@@ -115,7 +115,6 @@ function AuthButton() {
 
   return auth.user ? (
     <p>
-      Welcome!{" "}
       <button
         onClick={() => {
           auth.signout(() => history.push("/"));

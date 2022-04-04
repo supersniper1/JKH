@@ -30,8 +30,8 @@ const ModalApplication = ({setActive}) => {
             <option>Бригада 4</option>
             <option>Бригада 5</option>
           </select>
-          <input type="text" className='modalInput' placeholder='Напишите комментарий...' value={inputValue}
-                 onChange={event => setInputValue(event.target.value)}/>
+          <textarea className='modalInput' placeholder='Напишите комментарий...' value={inputValue}
+                 onChange={event => setInputValue(event.target.value)} />
         </div>
       </div>
       <div className='rows rowLast'>
