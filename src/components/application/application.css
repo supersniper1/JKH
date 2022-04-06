@@ -3,6 +3,7 @@
     height: 55px;
 }
 .application {
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

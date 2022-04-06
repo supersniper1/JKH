@@ -23,6 +23,19 @@ header {
 .headerRoutesItem {
     text-decoration: none;
 }
-li {
-
+button {
+    cursor: pointer;
+}
+select {
+    cursor: pointer;
+}
+textarea::-webkit-scrollbar {
+    width: 5px;
+    background-color: white;
+    border-radius: 2px;
+}
+textarea::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: #7C7C7C;
+    border-radius: 2px;
 }

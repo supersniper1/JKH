@@ -3,7 +3,9 @@ import React from 'react';
 const FinishedApplicationsPage = () => {
   return (
     <div>
-      Выполненные заявки
+      <div className="title">
+        <h2>Выполненые заявки</h2>
+      </div>
     </div>
   );
 };

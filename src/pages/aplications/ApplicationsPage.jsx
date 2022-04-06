@@ -6,7 +6,7 @@ import ModalApplication from "../../components/modal.application/ModalApplicatio
 
 const ApplicationsPage = (
 ) => {
-  const [modalActive, setModalActive] = useState(true)
+  const [modalActive, setModalActive] = useState(false)
   return (
     <div className="applicationPage">
       <div className="title">

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './modalApplication.css'
 
 const ModalApplication = ({setActive}) => {
+  const [inputValue, setInputValue] = useState('')
   return (
     <div className="modalApplication">
       <h3>Ул. Ленина д. 38 стр. 1</h3>
@@ -29,12 +30,16 @@ const ModalApplication = ({setActive}) => {
             <option>Бригада 4</option>
             <option>Бригада 5</option>
           </select>
-          <input type="text" className='modalInput' placeholder='Напишите комментарий...'/>
+          <textarea className='modalInput' placeholder='Напишите комментарий...' value={inputValue}
+                 onChange={event => setInputValue(event.target.value)} />
         </div>
       </div>
       <div className='rows rowLast'>
         <h3>Дворник Иван Иванович</h3>
-        <button className="modalButton" onClick={() => setActive(false)}>Отправить</button>
+        <button className="modalButton" onClick={() => {
+          setActive(false)
+          setInputValue('')
+        }}>Отправить</button>
       </div>
     </div>
   );
