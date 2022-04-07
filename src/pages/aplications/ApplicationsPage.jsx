@@ -9,9 +9,6 @@ const ApplicationsPage = (
   const [modalActive, setModalActive] = useState(false)
   return (
     <div className="applicationPage">
-      <div className="title">
-        <h2>Входящие заявки</h2>
-      </div>
       <div className="applications">
         <div onClick={() => setModalActive(true)}><Application/></div>
         <div onClick={() => setModalActive(true)}><Application/></div>

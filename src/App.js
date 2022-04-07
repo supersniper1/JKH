@@ -8,7 +8,7 @@ import {
   useHistory,
   useLocation
 } from "react-router-dom";
-import './App.css';
+import './App.sass';
 import FinishedApplicationsPage from "./pages/finishedApplications/finishedApplicationsPage";
 import ApplicationsPage from "./pages/aplications/ApplicationsPage";
 
@@ -21,9 +21,6 @@ export default function AuthExample() {
           <header>
             <nav className='headerNav'>
               <ul className="headerRoutes">
-                <li>
-                  <Link to="/applications" className='headerRoutesItem'>Home</Link>
-                </li>
                 <li>
                   <Link to="/applications" className='headerRoutesItem'>Входящие заявки</Link>
                 </li>
@@ -177,7 +174,7 @@ function LoginPage() {
 
 
 
-// import './App.css';
+// import './App.sass';
 // import React from "react";
 // import {
 //   BrowserRouter as Router,
