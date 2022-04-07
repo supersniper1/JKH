@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './applicationPage.css'
+import './applicationPage.sass'
 import Application from "../../components/application/Application";
 import ModalComponents from "../../components/modal/Modal.components";
 import ModalApplication from "../../components/modal.application/ModalApplication";
