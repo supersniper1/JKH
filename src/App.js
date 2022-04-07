@@ -6,12 +6,11 @@ import {
   Link,
   Redirect,
   useHistory,
-  useLocation
+  useLocation,
 } from "react-router-dom";
-import './App.css';
+import "./App.css";
 import FinishedApplicationsPage from "./pages/finishedApplications/finishedApplicationsPage";
 import ApplicationsPage from "./pages/aplications/ApplicationsPage";
-
 
 export default function AuthExample() {
   return (
@@ -19,16 +18,22 @@ export default function AuthExample() {
       <Router>
         <div>
           <header>
-            <nav className='headerNav'>
+            <nav className="headerNav">
               <ul className="headerRoutes">
                 <li>
-                  <Link to="/applications" className='headerRoutesItem'>Home</Link>
+                  <Link to="/applications" className="headerRoutesItem">
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/applications" className='headerRoutesItem'>Входящие заявки</Link>
+                  <Link to="/applications" className="headerRoutesItem">
+                    Входящие заявки
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/finishedTasks" className='headerRoutesItem'>Выполненные заявки</Link>
+                  <Link to="/finishedTasks" className="headerRoutesItem">
+                    Выполненные заявки
+                  </Link>
                 </li>
                 <li>
                   <AuthButton />
@@ -39,10 +44,10 @@ export default function AuthExample() {
 
           <Switch>
             <PrivateRoute path="/finishedTasks">
-              <FinishedApplicationsPage/>
+              <FinishedApplicationsPage />
             </PrivateRoute>
             <PrivateRoute path="/applications">
-              <ApplicationsPage/>
+              <ApplicationsPage />
             </PrivateRoute>
             <Route path="/login">
               <LoginPage />
@@ -63,7 +68,7 @@ const fakeAuth = {
   signout(cb) {
     fakeAuth.isAuthenticated = false;
     setTimeout(cb, 100);
-  }
+  },
 };
 
 /** For more details on
@@ -74,11 +79,7 @@ const authContext = createContext();
 
 function ProvideAuth({ children }) {
   const auth = useProvideAuth();
-  return (
-    <authContext.Provider value={auth}>
-      {children}
-    </authContext.Provider>
-  );
+  return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
 
 function useAuth() {
@@ -88,14 +89,14 @@ function useAuth() {
 function useProvideAuth() {
   const [user, setUser] = useState(null);
 
-  const signin = cb => {
+  const signin = (cb) => {
     return fakeAuth.signin(() => {
       setUser("user");
       cb();
     });
   };
 
-  const signout = cb => {
+  const signout = (cb) => {
     return fakeAuth.signout(() => {
       setUser(null);
       cb();
@@ -105,7 +106,7 @@ function useProvideAuth() {
   return {
     user,
     signin,
-    signout
+    signout,
   };
 }
 
@@ -115,16 +116,10 @@ function AuthButton() {
 
   return auth.user ? (
     <p>
-      <button
-        onClick={() => {
-          auth.signout(() => history.push("/"));
-        }}
-      >
-        Sign out
-      </button>
+      <a type="button" className="signOutButton" onClick={() => {auth.signout(() => history.push("/"));}}>Выйти</a>
     </p>
   ) : (
-    <p>You are not logged in.</p>
+    <p>Вы не вошли</p>
   );
 }
 
@@ -142,7 +137,7 @@ function PrivateRoute({ children, ...rest }) {
           <Redirect
             to={{
               pathname: "/login",
-              state: { from: location }
+              state: { from: location },
             }}
           />
         )
@@ -150,10 +145,6 @@ function PrivateRoute({ children, ...rest }) {
     />
   );
 }
-
-
-
-
 
 function LoginPage() {
   let history = useHistory();
@@ -168,14 +159,40 @@ function LoginPage() {
   };
 
   return (
-    <div>
-      <p>You must log in to view the page at {from.pathname}</p>
-      <button onClick={login}>Log in</button>
+    <div className="loginContainer">
+      <div className="loginBlock">
+        <h5 className="joinText">Вход</h5>
+        <div className="loginContent">
+          <h5 className="loginText">Имя:</h5>
+          <input type="name" className="loginInput" />
+          <h5 className="loginText">Пароль:</h5>
+          <input type="password" className="loginInput" />
+          <div>
+            <a type="button" className="loginButton" onClick={login}>
+              Продолжить
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
+//Valudation check
+// let button = document.querySelectorAll('.send');
+// let input = document.querySelector('#error');
+// for (let i = 0; i < button.length; i++) {
+//   button[i].addEventListener('click', function() {
+//     if (input.value !== '') {
+//       console.log('НЕ пустой');
+//     }else{
+//     console.log('Пустой');
+//     }
+//   })
+// }
 
+// <input id="error" />
+// <button class="send">button</button>
 
 // import './App.css';
 // import React from "react";
