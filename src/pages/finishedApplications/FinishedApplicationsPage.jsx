@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FinishedApplicationsPage = () => {
+export const FinishedApplicationsPage = () => {
   return (
     <div>
       <div className="title">
@@ -9,5 +9,3 @@ const FinishedApplicationsPage = () => {
     </div>
   );
 };
-
-export default FinishedApplicationsPage;

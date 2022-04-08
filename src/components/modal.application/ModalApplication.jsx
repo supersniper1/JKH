@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import './modalApplication.css'
+import './modalApplication.css';
 
-const ModalApplication = ({setActive}) => {
+export const ModalApplication = ({setActive}) => {
   const [inputValue, setInputValue] = useState('')
   return (
     <div className="modalApplication">
@@ -44,5 +44,3 @@ const ModalApplication = ({setActive}) => {
     </div>
   );
 };
-
-export default ModalApplication;

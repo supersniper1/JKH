@@ -1,5 +1,3 @@
-import Application from "./application/Application";
-import ModalComponents from "./modal/Modal.components";
-import ModalApplication from "./modal.application/ModalApplication";
-
-export default {Application, ModalApplication, ModalComponents};
+export {Application} from "./application/Application";
+export {ModalComponents} from "./modal/Modal.components";
+export {ModalApplication} from "./modal.application/ModalApplication";

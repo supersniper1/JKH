@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
-import './applicationPage.sass'
-import Application from "../../components/application/Application";
-import ModalComponents from "../../components/modal/Modal.components";
-import ModalApplication from "../../components/modal.application/ModalApplication";
+import './applicationPage.sass';
+import {Application, ModalApplication, ModalComponents} from "../../components/export.components";
 
-const ApplicationsPage = (
+export const ApplicationsPage = (
 ) => {
   const [modalActive, setModalActive] = useState(false)
   return (
@@ -21,5 +19,3 @@ const ApplicationsPage = (
     </div>
   );
 };
-
-export default ApplicationsPage;

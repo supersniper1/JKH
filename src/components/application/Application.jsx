@@ -1,7 +1,7 @@
 import React from 'react';
-import './application.sass'
+import './application.sass';
 
-const Application = () => {
+export const Application = () => {
   return (
     <div className="application">
       <div className="applicationColumns">
@@ -23,5 +23,3 @@ const Application = () => {
     </div>
   );
 };
-
-export default Application;

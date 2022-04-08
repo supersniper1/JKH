@@ -1,7 +1,7 @@
 import React from 'react';
-import './modalComponents.css'
+import './modalComponents.css';
 
-const ModalComponents = ({active, setActive, children}) => {
+export const ModalComponents = ({active, setActive, children}) => {
   return (
     <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
       <div className="modalContent" onClick={e => e.stopPropagation()}>
@@ -10,5 +10,3 @@ const ModalComponents = ({active, setActive, children}) => {
     </div>
   );
 };
-
-export default ModalComponents;
