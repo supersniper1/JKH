@@ -1,24 +1,30 @@
 import React from 'react';
 import './application.sass';
 
-export const Application = () => {
+export const Application = (props) => {
+  const textSizing = (text) => {
+    if (text.length > 120) {
+      text.length = 120
+      return text + "..."
+    }
+  }
   return (
     <div className="application">
       <div className="applicationColumns">
-        <p className="applicationPriority">экстренно</p>
-        <h3>Заявка №13020</h3>
-        <p className="applicationDate">20.07.2022</p>
+        <p className="applicationPriority">{props.content.priority}</p>
+        <h3>Заявка №{props.content.id}</h3>
+        <p className="applicationDate">{props.content.date}</p>
+      </div>
+      <div className="applicationColumns applicationColumnSecond">
+        <h3>{props.content.problem}</h3>
+        <p className="applicationText">{props.content.text}</p>
       </div>
       <div className="applicationColumns">
-        <h3>Система водоснобжения</h3>
-        <p className="applicationText">Затопило подвал жилого дома да очень много воды нужно нулить в этом комментарии чтобы...</p>
+        <p className="applicationArea">{props.content.area}</p>
+        <p className="applicationStreet">{props.content.street}</p>
       </div>
       <div className="applicationColumns">
-        <p className="applicationArea">р-он Ленинский</p>
-        <p className="applicationStreet">ул. Пушкина д.10</p>
-      </div>
-      <div className="applicationColumns">
-        <p className="applicationStatus">В РАБОТЕ</p>
+        <p className="applicationStatus">{props.content.status}</p>
       </div>
     </div>
   );
