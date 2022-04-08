@@ -1,4 +1,5 @@
-{
+[
+  {
   "id": 1,
   "status": "В РАБОТЕ",
   "street": "ул. Пушкина д.10",
@@ -7,4 +8,5 @@
   "priority": "экстренно",
   "date": "20.07.2022",
   "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis fuga laborum natus necessitatibus, nulla officia porro quia recusandae sunt voluptatibus. Asperiores excepturi id molestias officia quod quos similique. Alias, sit."
-}
+  }
+]

@@ -5,11 +5,11 @@ import {Application, ModalApplication, ModalComponents} from "../../components/e
 export const ApplicationsPage = (
 ) => {
   const [modalActive, setModalActive] = useState(false)
-
+  let applicationRequest = "../../api/fake.jsons/application.json";
   return (
     <div className="applicationPage">
       <div className="applications">
-        <Application content={"../../api/fake.jsons/application.json"}/>
+        <Application content={{applicationRequest}}/>
       </div>
       <ModalComponents active={modalActive} setActive={setModalActive}>
         <ModalApplication setActive={setModalActive}/>
