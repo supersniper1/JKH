@@ -6,7 +6,7 @@ import {
   Link,
   Redirect,
   useHistory,
-  useLocation
+  useLocation,
 } from "react-router-dom";
 import './App.sass';
 import {ApplicationsPage, FinishedApplicationsPage} from "./pages/export.pages";
@@ -18,13 +18,15 @@ export default function App() {
       <Router>
         <div>
           <header>
-            <nav className='headerNav'>
+            <nav className="headerNav">
               <ul className="headerRoutes">
                 <li>
                   <Link to="/applications" className='headerRoutesItem'>Входящие заявки</Link>
                 </li>
                 <li>
-                  <Link to="/finishedTasks" className='headerRoutesItem'>Выполненные заявки</Link>
+                  <Link to="/finishedTasks" className="headerRoutesItem">
+                    Выполненные заявки
+                  </Link>
                 </li>
                 <li>
                   <AuthButton />
@@ -35,10 +37,10 @@ export default function App() {
 
           <Switch>
             <PrivateRoute path="/finishedTasks">
-              <FinishedApplicationsPage/>
+              <FinishedApplicationsPage />
             </PrivateRoute>
             <PrivateRoute path="/applications">
-              <ApplicationsPage/>
+              <ApplicationsPage />
             </PrivateRoute>
             <Route path="/login">
               <LoginPage />
@@ -59,7 +61,7 @@ const fakeAuth = {
   signout(cb) {
     fakeAuth.isAuthenticated = false;
     setTimeout(cb, 100);
-  }
+  },
 };
 
 /** For more details on
@@ -169,3 +171,4 @@ function LoginPage() {
     </div>
   );
 }
+
