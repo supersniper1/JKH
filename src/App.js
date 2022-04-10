@@ -8,11 +8,11 @@ import {
   useHistory,
   useLocation,
 } from "react-router-dom";
-import "./App.css";
-import FinishedApplicationsPage from "./pages/finishedApplications/finishedApplicationsPage";
-import ApplicationsPage from "./pages/aplications/ApplicationsPage";
+import './App.sass';
+import {ApplicationsPage, FinishedApplicationsPage} from "./pages/export.pages";
 
-export default function AuthExample() {
+
+export default function App() {
   return (
     <ProvideAuth>
       <Router>
@@ -21,14 +21,7 @@ export default function AuthExample() {
             <nav className="headerNav">
               <ul className="headerRoutes">
                 <li>
-                  <Link to="/applications" className="headerRoutesItem">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/applications" className="headerRoutesItem">
-                    Входящие заявки
-                  </Link>
+                  <Link to="/applications" className='headerRoutesItem'>Входящие заявки</Link>
                 </li>
                 <li>
                   <Link to="/finishedTasks" className="headerRoutesItem">
@@ -147,6 +140,7 @@ function PrivateRoute({ children, ...rest }) {
 }
 
 function LoginPage() {
+  // import styles from './pages/login/loginPage.module.sass';
   let history = useHistory();
   let location = useLocation();
   let auth = useAuth();
@@ -178,63 +172,3 @@ function LoginPage() {
   );
 }
 
-//Valudation check
-// let button = document.querySelectorAll('.send');
-// let input = document.querySelector('#error');
-// for (let i = 0; i < button.length; i++) {
-//   button[i].addEventListener('click', function() {
-//     if (input.value !== '') {
-//       console.log('НЕ пустой');
-//     }else{
-//     console.log('Пустой');
-//     }
-//   })
-// }
-
-// <input id="error" />
-// <button class="send">button</button>
-
-// import './App.css';
-// import React from "react";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-// } from "react-router-dom";
-// import ApplicationsPage from "./pages/aplications/ApplicationsPage";
-// import FinishedApplicationsPage from "./pages/finishedApplications/finishedApplicationsPage";
-//
-// function App() {
-//   return (
-//     <Router>
-//       <div>
-//         <header>
-//           <nav className='headerNav'>
-//             <ul className="headerRoutes">
-//               <li>
-//                 <Link to="/applications" className='headerRoutesItem'>Home</Link>
-//               </li>
-//               <li>
-//                 <Link to="/applications" className='headerRoutesItem'>Входящие заявки</Link>
-//               </li>
-//               <li>
-//                 <Link to="/finishedTasks" className='headerRoutesItem'>Выполненные заявки</Link>
-//               </li>
-//             </ul>
-//           </nav>
-//         </header>
-//         <Switch>
-//           <Route path="/finishedTasks">
-//             <FinishedApplicationsPage/>
-//           </Route>
-//           <Route path="/applications">
-//             <ApplicationsPage/>
-//           </Route>
-//         </Switch>
-//       </div>
-//     </Router>
-//   );
-// }
-//
-// export default App;

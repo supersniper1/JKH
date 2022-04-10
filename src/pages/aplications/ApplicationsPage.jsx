@@ -1,22 +1,44 @@
 import React, {useState} from 'react';
-import './applicationPage.css'
-import Application from "../../components/application/Application";
-import ModalComponents from "../../components/modal/Modal.components";
-import ModalApplication from "../../components/modal.application/ModalApplication";
+import './applicationPage.sass';
+import {Application, ModalApplication, ModalComponents} from "../../components/export.components";
 
-const ApplicationsPage = (
+export const ApplicationsPage = (
 ) => {
   const [modalActive, setModalActive] = useState(false)
+  let applicationRequest = "../../api/fake.jsons/application.json";
   return (
     <div className="applicationPage">
-      <div className="title">
-        <h2>Входящие заявки</h2>
-      </div>
       <div className="applications">
-        <div onClick={() => setModalActive(true)}><Application/></div>
-        <div onClick={() => setModalActive(true)}><Application/></div>
-        <div onClick={() => setModalActive(true)}><Application/></div>
-        <div onClick={() => setModalActive(true)}><Application/></div>
+        <Application content={{
+          "id": 1,
+          "status": "В РАБОТЕ",
+          "street": "ул. Пушкина д.10",
+          "area": "р-он Ленинский",
+          "problem": "Система водоснобжения",
+          "priority": "экстренно",
+          "date": "20.07.2022",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
+        }}/>
+        <Application content={{
+          "id": 1,
+          "status": "В РАБОТЕ",
+          "street": "ул. Пушкина д.10",
+          "area": "р-он Ленинский",
+          "problem": "Система водоснобжения",
+          "priority": "экстренно",
+          "date": "20.07.2022",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
+        }}/>
+        <Application content={{
+          "id": 1,
+          "status": "В РАБОТЕ",
+          "street": "ул. Пушкина д.10",
+          "area": "р-он Ленинский",
+          "problem": "Система водоснобжения",
+          "priority": "экстренно",
+          "date": "20.07.2022",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
+        }}/>
       </div>
       <ModalComponents active={modalActive} setActive={setModalActive}>
         <ModalApplication setActive={setModalActive}/>
@@ -24,5 +46,3 @@ const ApplicationsPage = (
     </div>
   );
 };
-
-export default ApplicationsPage;

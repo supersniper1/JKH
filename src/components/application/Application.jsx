@@ -1,26 +1,34 @@
 import React from 'react';
-import './application.css'
+import './application.sass';
 
-const Application = () => {
+export const Application = (props) => {
+  let text = props.content.text
+  const textSizing = () => {
+    if (text.length > 120) {
+      return text.substr(0, 120) + "..."
+    } else {
+      console.log(text)
+      return text
+    }
+  }
   return (
     <div className="application">
-      <div className="applicationText">
-        <h3>Ул. Ленина д. 38 стр. 1</h3>
-        <p>Дворник Иван Иванович</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, voluptatem!</p>
+      <div className="applicationColumns">
+        <p className="applicationPriority">{props.content.priority}</p>
+        <h3>Заявка №{props.content.id}</h3>
+        <p className="applicationDate">{props.content.date}</p>
       </div>
-      <div className="applicationImages">
-        <div className='applicationImagesRow'>
-          <img className='applicationImage' src={require("../../images/img.png")} alt="Фото с места"/>
-          <img className='applicationImage' src={require("../../images/img.png")} alt="Фото с места"/>
-        </div>
-        <div className='applicationImagesRow'>
-          <img className='applicationImage' src={require("../../images/img.png")} alt="Фото с места"/>
-          <img className='applicationImage' src={require("../../images/img.png")} alt="Фото с места"/>
-        </div>
+      <div className="applicationColumns applicationColumnSecond">
+        <h3>{props.content.problem}</h3>
+        <p className="applicationText">{textSizing()}</p>
+      </div>
+      <div className="applicationColumns">
+        <p className="applicationArea">{props.content.area}</p>
+        <p className="applicationStreet">{props.content.street}</p>
+      </div>
+      <div className="applicationColumns">
+        <p className="applicationStatus">{props.content.status}</p>
       </div>
     </div>
   );
 };
-
-export default Application;
