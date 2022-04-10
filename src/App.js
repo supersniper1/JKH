@@ -12,7 +12,7 @@ import './App.sass';
 import {ApplicationsPage, FinishedApplicationsPage} from "./pages/export.pages";
 
 
-export default function AuthExample() {
+export default function App() {
   return (
     <ProvideAuth>
       <Router>
