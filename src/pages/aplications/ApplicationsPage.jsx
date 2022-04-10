@@ -9,7 +9,36 @@ export const ApplicationsPage = (
   return (
     <div className="applicationPage">
       <div className="applications">
-        <Application content={{applicationRequest}}/>
+        <Application content={{
+          "id": 1,
+          "status": "В РАБОТЕ",
+          "street": "ул. Пушкина д.10",
+          "area": "р-он Ленинский",
+          "problem": "Система водоснобжения",
+          "priority": "экстренно",
+          "date": "20.07.2022",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
+        }}/>
+        <Application content={{
+          "id": 1,
+          "status": "В РАБОТЕ",
+          "street": "ул. Пушкина д.10",
+          "area": "р-он Ленинский",
+          "problem": "Система водоснобжения",
+          "priority": "экстренно",
+          "date": "20.07.2022",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
+        }}/>
+        <Application content={{
+          "id": 1,
+          "status": "В РАБОТЕ",
+          "street": "ул. Пушкина д.10",
+          "area": "р-он Ленинский",
+          "problem": "Система водоснобжения",
+          "priority": "экстренно",
+          "date": "20.07.2022",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
+        }}/>
       </div>
       <ModalComponents active={modalActive} setActive={setModalActive}>
         <ModalApplication setActive={setModalActive}/>

@@ -2,10 +2,13 @@ import React from 'react';
 import './application.sass';
 
 export const Application = (props) => {
-  const textSizing = (text) => {
+  let text = props.content.text
+  const textSizing = () => {
     if (text.length > 120) {
-      text.length = 120
-      return text + "..."
+      return text.substr(0, 120) + "..."
+    } else {
+      console.log(text)
+      return text
     }
   }
   return (
@@ -17,7 +20,7 @@ export const Application = (props) => {
       </div>
       <div className="applicationColumns applicationColumnSecond">
         <h3>{props.content.problem}</h3>
-        <p className="applicationText">{props.content.text}</p>
+        <p className="applicationText">{textSizing()}</p>
       </div>
       <div className="applicationColumns">
         <p className="applicationArea">{props.content.area}</p>
