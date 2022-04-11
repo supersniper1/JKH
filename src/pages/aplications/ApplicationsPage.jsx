@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './applicationPage.sass';
-import {Application, ModalApplication, ModalComponents} from "../../components/export.components";
+import {Application, Header, ModalApplication, ModalComponents} from "../../components/export.components";
 
 export const ApplicationsPage = (
 ) => {
@@ -8,6 +8,7 @@ export const ApplicationsPage = (
   let applicationRequest = "../../api/fake.jsons/application.json";
   return (
     <div className="applicationPage">
+      <Header/>
       <div className="applications">
         <Application content={{
           "id": 1,

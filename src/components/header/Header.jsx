@@ -8,10 +8,10 @@ export const Header = () => {
       <nav>
         <ul>
           <li>
-            <Link />
+            <Link to='/applications' >Входящие завки</Link>
           </li>
           <li>
-            <Link />
+            <Link to='/finished-applications' >Выполненные завки</Link>
           </li>
         </ul>
       </nav>
