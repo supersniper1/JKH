@@ -20,7 +20,7 @@ export const Application = (props) => {
       </div>
       <div className="applicationColumns applicationColumnSecond">
         <h3>{props.content.problem}</h3>
-        <p className="applicationText">{text}</p>
+        <p className="applicationText">{textSizing()}</p>
       </div>
       <div className="applicationColumns">
         <p className="applicationArea">{props.content.area}</p>

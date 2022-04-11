@@ -15,10 +15,9 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />}>
-            <Route path='applications' element={<ApplicationsPage />} />
-            <Route path='finished-applications' element={<FinishedApplicationsPage />} />
-          </Route>
+          <Route path="/" element={<LoginPage />} />
+          <Route path='/applications' element={<ApplicationsPage />} />
+          <Route path='/finished-applications' element={<FinishedApplicationsPage />} />
         </Routes>
       </BrowserRouter>
     </div>

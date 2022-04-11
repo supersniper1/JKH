@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './loginPage.module.sass';
+import './loginPage.sass';
 
 export const LoginPage = () => {
   // let history = useHistory();
