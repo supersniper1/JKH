@@ -7,16 +7,18 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const signIn = (user, cb) => {
-    setUser(user);
+    localStorage.setItem('token', user)
+    // setUser(user);
     cb();
   }
 
   const signOut = (cb) => {
-    setUser(null);
+    localStorage.removeItem('token')
+    // setUser(null);
     cb();
   }
 
-  const value = { user, signIn, signOut }
+  const value = { signIn, signOut }
 
   return (
     <AuthContext.Provider value={value}>
