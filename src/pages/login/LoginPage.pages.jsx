@@ -1,17 +1,21 @@
 import React from "react";
 import './loginPage.sass';
+import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "../../utils/auth/useAuth";
 
 export const LoginPage = () => {
-  // let history = useHistory();
-  // let location = useLocation();
-  // let auth = useAuth();
 
-  // let { from } = location.state || { from: { pathname: "/" } };
-  // let login = () => {
-  //   auth.signin(() => {
-  //     history.replace(from);
-  //   });
-  // };
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { signIn } = useAuth();
+
+  const fromPage = location.state?.from?.pathname || '/';
+
+  const user = 'den';
+
+  const handleLogin = () => {
+    signIn(user, () => navigate(fromPage, { replace: true }))
+  }
 
   return (
     <div className="loginContainer">
@@ -23,7 +27,7 @@ export const LoginPage = () => {
           <h5 className="loginText">Пароль:</h5>
           <input type="password" className="loginInput" />
           <div>
-            <a type="button" className="loginButton">
+            <a type="button" className="loginButton" onClick={handleLogin}>
               Продолжить
             </a>
           </div>
