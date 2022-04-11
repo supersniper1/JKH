@@ -1,17 +1,16 @@
-import React, { useContext, createContext, useState } from "react";
+import React from "react";
 import './App.sass';
 import { ApplicationsPage, FinishedApplicationsPage, LoginPage } from "./pages/export.pages";
 import {
+  BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import { BrowserRouter as Router } from 'react-router-dom';
 import { RequireAuth } from "./utils/auth/requireAuth";
 import { AuthProvider } from "./utils/auth/authProvider";
 
 
 export default function App() {
-
 
   return (
     <AuthProvider>
