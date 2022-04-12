@@ -1,6 +1,6 @@
 import React from "react";
 import './App.sass';
-import { ApplicationsPage, FinishedApplicationsPage, LoginPage } from "./pages/export.pages";
+import {ApplicationsPage, FinishedApplicationsPage, LoginPage, ProfilePage} from "./pages/export.pages";
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,6 +25,11 @@ export default function App() {
           <Route path='/finished-applications' element={
             <RequireAuth>
               <FinishedApplicationsPage />
+            </RequireAuth>
+          } />
+          <Route path='/profile' element={
+            <RequireAuth>
+              <ProfilePage/>
             </RequireAuth>
           } />
         </Routes>

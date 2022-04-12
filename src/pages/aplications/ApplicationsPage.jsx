@@ -16,7 +16,7 @@ export const ApplicationsPage = (
           "street": "ул. Пушкина д.10",
           "area": "р-он Ленинский",
           "problem": "Система водоснобжения",
-          "priority": "экстренно",
+          "priority": 0,
           "date": "20.07.2022",
           "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
         }}/>
@@ -26,7 +26,7 @@ export const ApplicationsPage = (
           "street": "ул. Пушкина д.10",
           "area": "р-он Ленинский",
           "problem": "Система водоснобжения",
-          "priority": "экстренно",
+          "priority": 1,
           "date": "20.07.2022",
           "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
         }}/>
@@ -36,7 +36,17 @@ export const ApplicationsPage = (
           "street": "ул. Пушкина д.10",
           "area": "р-он Ленинский",
           "problem": "Система водоснобжения",
-          "priority": "экстренно",
+          "priority": 2,
+          "date": "20.07.2022",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
+        }}/>
+        <Application content={{
+          "id": 1,
+          "status": "В РАБОТЕ",
+          "street": "ул. Пушкина д.10",
+          "area": "р-он Ленинский",
+          "problem": "Система водоснобжения",
+          "priority": 3,
           "date": "20.07.2022",
           "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid asperiores consectetur cupiditate deleniti doloremque et exercitationem expedita facere facilis hic magnam nisi perferendis, perspiciatis qui quia quibusdam sunt tenetur voluptas. Adipisci assumenda blanditiis cum expedita necessitatibus sit, suscipit."
         }}/>

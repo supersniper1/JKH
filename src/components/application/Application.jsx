@@ -11,10 +11,40 @@ export const Application = (props) => {
       return text
     }
   }
+
+  let priority = props.content.priority
+  const priorityText = () => {
+    if (priority === 0) {
+      return  "экстренно"
+    }
+    if (priority === 1) {
+      return "нормально"
+    }
+    if (priority === 2) {
+      return "важно"
+    }
+    if (priority === 3) {
+      return "нейтрально"
+    }
+  }
+  const priorityClass = () => {
+    if (priority === 0) {
+      return "urgentlyPriority applicationPriority"
+    }
+    if (priority === 1) {
+      return "normalPriority applicationPriority"
+    }
+    if (priority === 2) {
+      return "importantPriority applicationPriority"
+    }
+    if (priority === 3) {
+      return "neutralPriority applicationPriority"
+    }
+  }
   return (
     <div className="application">
       <div className="applicationColumns">
-        <p className="applicationPriority">{props.content.priority}</p>
+        <p className={priorityClass()}>{priorityText()}</p>
         <h3>Заявка №{props.content.id}</h3>
         <p className="applicationDate">{props.content.date}</p>
       </div>
