@@ -1,21 +1,20 @@
 import React from "react";
-import './loginPage.sass';
+import "./loginPage.sass";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../utils/auth/useAuth";
 
 export const LoginPage = () => {
-
   const navigate = useNavigate();
   const location = useLocation();
   const { signIn } = useAuth();
 
-  const fromPage = location.state?.from?.pathname || '/';
+  const fromPage = location.state?.from?.pathname || "/";
 
-  const user = 'den';
+  const user = "den";
 
   const handleLogin = () => {
-    signIn(user, () => navigate(fromPage, { replace: true }))
-  }
+    signIn(user, () => navigate(fromPage, { replace: true }));
+  };
 
   return (
     <div className="loginContainer">
@@ -35,4 +34,4 @@ export const LoginPage = () => {
       </div>
     </div>
   );
-}
+};
