@@ -1,6 +1,6 @@
 import React from 'react';
 import './header.sass'
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -8,13 +8,34 @@ export const Header = () => {
       <nav>
         <ul>
           <li>
-            <Link to='/applications' >Входящие завки</Link>
+            <NavLink
+              to="/applications"
+              className={({ isActive }) =>
+                isActive ? 'activeLink' : 'inactiveLink'
+              }
+            >
+              Входящие заявки
+            </NavLink>
           </li>
           <li>
-            <Link to='/finished-applications' >Выполненные завки</Link>
+            <NavLink
+              to="/finished-applications"
+              className={({ isActive }) =>
+                isActive ? 'activeLink' : 'inactiveLink'
+              }
+            >
+              Выполненные заявки
+            </NavLink>
           </li>
           <li>
-            <Link to='/profile' >Мой профиль</Link>
+            <NavLink
+              to="/profile"
+              className={({ isActive }) =>
+                isActive ? 'activeLink' : 'inactiveLink'
+              }
+            >
+              Мой профиль
+            </NavLink>
           </li>
         </ul>
       </nav>
