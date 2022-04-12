@@ -1,7 +1,7 @@
 import React from 'react';
-import './fourOFourPage.sass'
+import './notFoundPage.sass'
 
-export const FourOFourPage = () => {
+export const NotFoundPage = () => {
   return (
     <div className="FourOFourPage">
       <h1>404 error</h1>
