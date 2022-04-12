@@ -13,6 +13,9 @@ export const Header = () => {
           <li>
             <Link to='/finished-applications' >Выполненные завки</Link>
           </li>
+          <li>
+            <Link to='/profile' >Мой профиль</Link>
+          </li>
         </ul>
       </nav>
     </header>
