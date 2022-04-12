@@ -5,6 +5,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
 import { RequireAuth } from "./utils/auth/requireAuth";
 import { AuthProvider } from "./utils/auth/authProvider";
@@ -16,6 +17,7 @@ export default function App() {
     <AuthProvider>
       <Router>
         <Routes>
+          <Route path="/" element={<Navigate to="/applications"/>}/>
           <Route path='/login' element={<LoginPage />} />
           <Route path='/applications' element={
             <RequireAuth>
