@@ -1,6 +1,12 @@
 import React from "react";
 import './App.sass';
-import {ApplicationsPage, FinishedApplicationsPage, LoginPage, ProfilePage} from "./pages/export.pages";
+import {
+  ApplicationsPage,
+  FinishedApplicationsPage,
+  NotFoundPage,
+  LoginPage,
+  ProfilePage
+} from "./pages/export.pages";
 import {
   BrowserRouter as Router,
   Routes,
@@ -17,6 +23,7 @@ export default function App() {
     <AuthProvider>
       <Router>
         <Routes>
+          <Route path="*" element={<NotFoundPage/>}/>
           <Route path="/" element={<Navigate to="/applications"/>}/>
           <Route path='/login' element={<LoginPage />} />
           <Route path='/applications' element={
