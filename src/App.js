@@ -23,7 +23,8 @@ export default function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="*" element={<NotFoundPage/>}/>
+          <Route path="*" element={<Navigate to="/404" replace />} />
+          <Route path="/404" element={<NotFoundPage/>}/>
           <Route path="/" element={<Navigate to="/applications"/>}/>
           <Route path='/login' element={<LoginPage />} />
           <Route path='/applications' element={
