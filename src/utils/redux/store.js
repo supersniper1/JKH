@@ -7,9 +7,9 @@ const defaultState = {
 const JWTChanger = (state = defaultState, action) => {
   switch (action.type) {
     case 'SET_KEY':
-      return {...state, reduxStorage: 'den'}
+      return {...state, reduxStorage: action.token}
     case 'REMOVE_KEY':
-      return {...state, reduxStorage: null}
+      return {...state, reduxStorage: action.token}
     default:
       return state
   }
