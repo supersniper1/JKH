@@ -20,9 +20,9 @@ import {useDispatch, useSelector} from "react-redux";
 
 export default function App() {
 
-  // const dispatch = useDispatch()
-  // const key = useSelector(state => state.reduxStorage)
-  // console.log(key)
+  const dispatch = useDispatch()
+  const key = useSelector(state => state.reduxStorage)
+  console.log(key)
 
   return (
     <AuthProvider>
