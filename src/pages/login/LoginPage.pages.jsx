@@ -27,8 +27,8 @@ export const LoginPage = () => {
         <form className="loginContent" onSubmit={(e) => {
           e.preventDefault()
           postApi({
-            login: login,
-            password: password
+            'login': login,
+            'password': password
           })
           setPassword('')
           setLogin('')
