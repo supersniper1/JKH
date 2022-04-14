@@ -15,9 +15,14 @@ import {
 } from "react-router-dom";
 import { RequireAuth } from "./utils/auth/requireAuth";
 import { AuthProvider } from "./utils/auth/authProvider";
+import {useDispatch, useSelector} from "react-redux";
 
 
 export default function App() {
+
+  // const dispatch = useDispatch()
+  // const key = useSelector(state => state.reduxStorage)
+  // console.log(key)
 
   return (
     <AuthProvider>
