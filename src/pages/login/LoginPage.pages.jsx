@@ -14,9 +14,8 @@ export const LoginPage = () => {
 
   const fromPage = location.state?.from?.pathname || "/";
 
-  const user = "den";
 
-  const handleLogin = () => {
+  const handleLogin = (user) => {
     signIn(user, () => navigate(fromPage, { replace: true }));
   };
 
@@ -30,7 +29,7 @@ export const LoginPage = () => {
             'login': login,
             'password': password
           },
-            () => handleLogin()
+            (response) => handleLogin(response.data.token),
             )
 
           setPassword('')
