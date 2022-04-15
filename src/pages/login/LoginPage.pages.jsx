@@ -42,9 +42,6 @@ export const LoginPage = () => {
           <h5 className="loginText">Пароль:</h5>
           <input type="password" className="loginInput" value={password} onChange={event => setPassword(event.target.value)} />
           <button className="loginButton" >Продолжить</button>
-          {/*<a type="button" className="loginButton" onClick={handleLogin}>*/}
-            {/*  Продолжить*/}
-            {/*</a>*/}
         </form>
       </div>
     </div>
