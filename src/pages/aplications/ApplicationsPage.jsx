@@ -5,13 +5,19 @@ import getRequests from "../../api/get.api";
 
 export const ApplicationsPage = () => {
 
-  getRequests((response) => console.log(response.data))
+  const applicationsRender = () => {
+    getRequests((response) => {
+      response.data.map((data) => <Application content={data} key={data.id}/>)
+    })
+  }
 
   const [modalActive, setModalActive] = useState(false)
   return (
     <div className="applicationPage">
       <Header/>
       <div className="applications">
+        {applicationsRender}
+
         <Application content={{
           "id": 1,
           "status": "В РАБОТЕ",
