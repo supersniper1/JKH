@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import './applicationPage.sass';
 import {Application, Header, ModalApplication, ModalComponents} from "../../components/export.components";
+import getRequests from "../../api/get.api";
 
-export const ApplicationsPage = (
-) => {
+export const ApplicationsPage = () => {
+
+  getRequests((response) => console.log(response.data))
+
   const [modalActive, setModalActive] = useState(false)
-  let applicationRequest = "../../api/fake.jsons/application.json";
   return (
     <div className="applicationPage">
       <Header/>
