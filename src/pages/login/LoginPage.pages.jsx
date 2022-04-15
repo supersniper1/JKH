@@ -30,7 +30,6 @@ export const LoginPage = () => {
             'login': login,
             'password': password
           },
-            (response) => localStorage.setItem('@token', response.data),
             () => handleLogin()
             )
 
