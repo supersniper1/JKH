@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./loginPage.sass";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../utils/auth/useAuth";
-import postApi from "../../api/post.api";
+import loginRequest from "../../api/post.api";
 
 export const LoginPage = () => {
   const [login, setLogin] = useState('')
@@ -26,10 +26,12 @@ export const LoginPage = () => {
         <h5 className="joinText">Вход</h5>
         <form className="loginContent" onSubmit={(e) => {
           e.preventDefault()
-          postApi({
+          loginRequest({
             'login': login,
             'password': password
-          })
+          },
+            (response) => localStorage.setItem('@token', response.data))
+
           setPassword('')
           setLogin('')
         }}>
