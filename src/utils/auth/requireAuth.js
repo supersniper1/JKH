@@ -3,6 +3,7 @@ import { useAuth } from './useAuth';
  
 export const RequireAuth = ({ children }) => {
   const location = useLocation();
+  // TODO НЕИСПОЛЬЗОВАННАЯ ПЕРЕМЕННАЯ
   const { user } = useAuth();
  
   if (localStorage.getItem('token') === null) {
