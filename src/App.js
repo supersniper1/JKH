@@ -20,7 +20,6 @@ import { AuthProvider } from "./utils/auth/authProvider";
 export default function App() {
 
 
-
   return (
     <AuthProvider>
       <Router>
