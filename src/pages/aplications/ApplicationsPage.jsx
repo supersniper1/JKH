@@ -12,7 +12,7 @@ export const ApplicationsPage = () => {
     })
   }, [])
 
-  const [modalActive, setModalActive] = useState(false)
+  const [modalActive, setModalActive] = useState(true)
   return (
     <div className="applicationPage">
       <Header />
