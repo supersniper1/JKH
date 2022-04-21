@@ -1,1 +1,1 @@
-export {getRequests} from './get.api'
+export {getRequests} from './get.api';
