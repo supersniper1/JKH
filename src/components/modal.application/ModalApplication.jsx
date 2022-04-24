@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './modalApplication.sass';
+import './ModalApplication.module.sass';
 
-export const ModalApplication = ({ setActive }) => {
+export const ModalApplication = () => {
   const [inputValue, setInputValue] = useState('')
   return (
     <div className="applicationModal">
@@ -9,14 +9,14 @@ export const ModalApplication = ({ setActive }) => {
       <div className="modalContainer">
         <div className="leftBlock">
           <div className="modalTitle">
-            <h1>Заявка №{Number}</h1>
+            <h1 className="titleH1">Заявка №{Number}</h1>
           </div>
           <div className="leftDescription">
-            <h2>Описание</h2>
-            <p>Более подробное описание заявки от ее создателя. Пользователь может дать описание проесходящего, описание места где находится проблема и т.д. Более подробное описание заявки от ее создателя. Пользователь может дать описание проесходящего, описание места где находится проблема и т.д.</p>
+            <h2 className="titleH2">Описание</h2>
+            <p className="modalText">Более подробное описание заявки от ее создателя. Пользователь может дать описание проесходящего, описание места где находится проблема и т.д. Более подробное описание заявки от ее создателя. Пользователь может дать описание проесходящего, описание места где находится проблема и т.д.</p>
           </div>
           <div className="attachments">
-            <h2>Вложения</h2>
+            <h2 className="titleH2">Вложения</h2>
             <div className="attachmentsSlider">
               <img src="http://via.placeholder.com/200x200"/>
               <img src="http://via.placeholder.com/200x200"/>
@@ -25,33 +25,33 @@ export const ModalApplication = ({ setActive }) => {
             </div>
           </div>
           <div className="comments">
-            <h2>Комментарии</h2>
+            <h2 className="titleH2">Комментарии</h2>
             <div className="newComment">
               <img src={require("../../images/avatar.svg")}/>
-              <input></input>
+              <textarea className='modalInput' placeholder='Напишите комментарий...' value={inputValue} onChange={event => setInputValue(event.target.value)} />
             </div>
             <div className="oldComments">
-              <h3>Комментариев пока нет...</h3>
+              <h3 className="titleH3">Комментариев пока нет...</h3>
             </div>
           </div>
         </div>
         <div className="rightBlock">
           <div className="aboutTicket">
-            <h2>Описание</h2>
+            <h2 className="titleH2">Описание</h2>
             <div className="line"></div>
             <div className="status">
-              <h4>Состояние</h4>
+              <h4 className="titleH4">Состояние</h4>
               <div className="statusInfo">В РАБОТЕ</div>
-              <h4>Приоритет</h4>
+              <h4 className="titleH4">Приоритет</h4>
               <div className="priorityInfo">ЭКСТРЕННО</div>
-              <h4>Автор</h4>
+              <h4 className="titleH4">Автор</h4>
               <div className="owner">
                 <img src={require("../../images/avatar.svg")}/>
                 <h5>Виктор Дмитриевич</h5>
               </div>
-              <h4>Создано</h4>
+              <h4 className="titleH4">Создано</h4>
               <h5>20.07.2022</h5>
-              <h4>Исполнитель</h4>
+              <h4 className="titleH4">Исполнитель</h4>
               <div className="brigade">
                 <select name="brigade" id="brigade-select">
                   <option value="">Выбирите бригаду</option>
@@ -73,7 +73,7 @@ export const ModalApplication = ({ setActive }) => {
 
 
 // import React, {useState} from 'react';
-// import './modalApplication.sass';
+// import './ModalApplication.module.sass';
 //
 // export const ModalApplication = ({setActive}) => {
 //   const [inputValue, setInputValue] = useState('')
