@@ -47,7 +47,13 @@
 .applicationArea
     word-wrap: normal
 .applicationText
-    word-wrap: break-word
+    overflow: hidden
+    line-height: 21px
+    max-height: 50px
+    -webkit-box-orient: vertical
+    display: block
+    display: -webkit-box
     text-overflow: ellipsis
+    -webkit-line-clamp: 2
 .applicationColumnSecond
     width: 700px
