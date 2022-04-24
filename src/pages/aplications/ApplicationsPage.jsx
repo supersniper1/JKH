@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './applicationPage.sass';
-import { Application, Header, ModalApplication, Modal } from "../../components/export.components";
+import { Application, Header } from "../../components/export.components";
 import {getRequests} from "../../api/export.api";
 
 export const ApplicationsPage = () => {
@@ -12,14 +12,13 @@ export const ApplicationsPage = () => {
     })
   }, [])
 
-  const [modalActive, setModalActive] = useState(true)
   return (
     <div className="applicationPage">
       <Header />
       <div className="applications">
         {
           tickets ? (
-            tickets.map((ticket) => (
+            tickets.slice(0).reverse().map((ticket) => (
               <Application
                 key={ticket.id}
                 content={ticket}
@@ -28,9 +27,6 @@ export const ApplicationsPage = () => {
           ) : <div>Ошибка соеденения</div>
         }
       </div>
-      <Modal active={modalActive} setActive={setModalActive}>
-        <ModalApplication setActive={setModalActive} />
-      </Modal>
     </div>
   );
 };
