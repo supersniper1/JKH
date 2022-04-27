@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
-import './ModalApplication.module.sass';
+import React, {useEffect, useState} from 'react';
+import './ModalApplication.sass';
+import {getRequestById} from "../../api/get.api";
+import {useSelector} from "react-redux";
 
 export const ModalApplication = () => {
   const [inputValue, setInputValue] = useState('')
+  const [tickets, setTickets] = useState(null)
+
+  const id = useSelector(state => state.id)
+  console.log(id)
+
+  useEffect(() => {
+    getRequestById((id),res => res.data, (response) => {
+      setTickets(response)
+    })
+  }, [])
+
+  console.log(tickets)
+
   return (
     <div className="applicationModal">
       <div className="closeButton">X</div>
       <div className="modalContainer">
         <div className="leftBlock">
           <div className="modalTitle">
-            <h1 className="titleH1">Заявка №{Number}</h1>
+            <h1 className="titleH1">Заявка №{tickets.id}</h1>
           </div>
           <div className="leftDescription">
             <h2 className="titleH2">Описание</h2>
@@ -73,7 +88,7 @@ export const ModalApplication = () => {
 
 
 // import React, {useState} from 'react';
-// import './ModalApplication.module.sass';
+// import './ModalApplication.sass';
 //
 // export const ModalApplication = ({setActive}) => {
 //   const [inputValue, setInputValue] = useState('')
