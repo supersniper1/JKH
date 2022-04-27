@@ -10,3 +10,13 @@ export const getRequests = (action, secondAction) => {
     .then(action)
     .then(secondAction)
 }
+
+export const getRequestById = (id, action, secondAction) => {
+  axios.get(`${apiURL}/api/v1/requests/${id}`, {
+    headers: {
+      "Authorization": localStorage.getItem("token")
+    }
+  })
+    .then(action)
+    .then(secondAction)
+}
