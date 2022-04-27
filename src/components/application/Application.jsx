@@ -1,8 +1,12 @@
 import React from 'react';
 import './application.sass';
+import {useDispatch} from "react-redux";
 
 export const Application = ({content}) => {
   let text = content.description
+  const dispatch = useDispatch()
+
+
 
   let priority = content.userRequestPriority.id
   const priorityText = () => {
@@ -31,7 +35,7 @@ export const Application = ({content}) => {
     }
   }
   return (
-    <div className="application" onClick={() => console.log('sad')}>
+    <div className="application" onClick={() => dispatch({type: "GOTTEN_ID", id: content.id})}>
       <div className="applicationColumns">
         <p className={priorityClass() + " applicationPriority"}>{priorityText()}</p>
         <h3>Заявка №{content.id}</h3>
