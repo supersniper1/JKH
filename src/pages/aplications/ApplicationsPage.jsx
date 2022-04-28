@@ -3,7 +3,7 @@ import './applicationPage.sass';
 import { Application, Header } from "../../components/export.components";
 import {getRequests} from "../../api/export.api";
 
-export const ApplicationsPage = () => {
+export const ApplicationsPage = ({setActive}) => {
   const [tickets, setTickets] = useState(null)
 
   useEffect(() => {
@@ -20,6 +20,7 @@ export const ApplicationsPage = () => {
           tickets ? (
             tickets.slice(0).reverse().map((ticket) => (
               <Application
+                setActive={setActive}
                 key={ticket.id}
                 content={ticket}
               />

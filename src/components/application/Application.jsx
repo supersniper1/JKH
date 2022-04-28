@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './application.sass';
 import {useDispatch} from "react-redux";
+import {getRequestById} from "../../api/get.api";
 
-export const Application = ({content}) => {
+export const Application = ({content, setActive}) => {
+  const [tickets, setTickets] = useState(null)
+
   let text = content.description
   const dispatch = useDispatch()
 
-
+  getRequestById((content.id), res => res.data, (response) => {
+    setTickets(response)
+  })
 
   let priority = content.userRequestPriority.id
   const priorityText = () => {
@@ -35,7 +40,10 @@ export const Application = ({content}) => {
     }
   }
   return (
-    <div className="application" onClick={() => dispatch({type: "GOTTEN_ID", id: content.id})}>
+    <div className="application" onClick={() => {
+      dispatch({type: "GOTTEN_ID", id: tickets})
+      setActive(true)
+    }}>
       <div className="applicationColumns">
         <p className={priorityClass() + " applicationPriority"}>{priorityText()}</p>
         <h3>Заявка №{content.id}</h3>

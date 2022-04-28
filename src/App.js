@@ -21,7 +21,7 @@ import {Modal} from "./components/modal/Modal.components";
 
 export default function App() {
 
-  const [modalActive, setModalActive] = useState(true)
+  const [modalActive, setModalActive] = useState(false)
 
   return (
     <AuthProvider>
@@ -33,7 +33,7 @@ export default function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/applications' element={
             <RequireAuth>
-              <ApplicationsPage />
+              <ApplicationsPage setActive={setModalActive} />
             </RequireAuth>
           } />
           <Route path='/finished-applications' element={
