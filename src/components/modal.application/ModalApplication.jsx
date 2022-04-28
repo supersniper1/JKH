@@ -1,22 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './ModalApplication.sass';
-import {getRequestById} from "../../api/get.api";
 import {useSelector} from "react-redux";
 
 export const ModalApplication = () => {
   const [inputValue, setInputValue] = useState('')
-  const [tickets, setTickets] = useState(null)
 
-  const id = useSelector(state => state.id)
-  console.log(id)
+  const content = useSelector(state => state.id)
+  console.log(content)
 
-  useEffect(() => {
-    getRequestById((id),res => res.data, (response) => {
-      setTickets(response)
-    })
-  }, [])
-
-  console.log(tickets)
 
   return (
     <div className="applicationModal">
@@ -24,11 +15,11 @@ export const ModalApplication = () => {
       <div className="modalContainer">
         <div className="leftBlock">
           <div className="modalTitle">
-            <h1 className="titleH1">Заявка №{tickets.id}</h1>
+            <h1 className="titleH1">Заявка №{content.id}</h1>
           </div>
           <div className="leftDescription">
             <h2 className="titleH2">Описание</h2>
-            <p className="modalText">Более подробное описание заявки от ее создателя. Пользователь может дать описание проесходящего, описание места где находится проблема и т.д. Более подробное описание заявки от ее создателя. Пользователь может дать описание проесходящего, описание места где находится проблема и т.д.</p>
+            <p className="modalText">{content.description}</p>
           </div>
           <div className="attachments">
             <h2 className="titleH2">Вложения</h2>
