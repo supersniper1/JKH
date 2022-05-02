@@ -8,6 +8,34 @@ export const ModalApplication = () => {
   const content = useSelector(state => state.id)
   console.log(content)
 
+  let priority = content.userRequestPriority.id
+
+  const priorityText = () => {
+    switch (priority) {
+      case 1:
+        return "экстренно";
+      case 2:
+        return "нейтрально";
+      case 3:
+        return "нормально";
+      case 4:
+        return "важно";
+    }
+  }
+
+  const priorityClass = () => {
+    switch (priority) {
+      case 1:
+        return "urgentlyPriority"
+      case 2:
+        return "neutralPriority"
+      case 3:
+        return "normalPriority"
+      case 4:
+        return "importantPriority"
+    }
+  }
+
 
   return (
     <div className="applicationModal">
@@ -47,9 +75,9 @@ export const ModalApplication = () => {
             <div className="line"></div>
             <div className="status">
               <h4 className="titleH4">Состояние</h4>
-              <div className="statusInfo">В РАБОТЕ</div>
+              <div className="statusInfo">{content.status}</div>
               <h4 className="titleH4">Приоритет</h4>
-              <div className="priorityInfo">ЭКСТРЕННО</div>
+              <div className={priorityClass() + "priorityInfo"}>{priorityText()}</div>
               <h4 className="titleH4">Автор</h4>
               <div className="owner">
                 <img src={require("../../images/avatar.svg")}/>
