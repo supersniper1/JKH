@@ -8,7 +8,7 @@ export const ModalApplication = () => {
   const content = useSelector(state => state.id)
   console.log(content)
 
-  let priority = content.userRequestPriority.id
+  let priority = 1
 
   const priorityText = () => {
     switch (priority) {
