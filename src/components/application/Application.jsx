@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './application.sass';
 import {useDispatch} from "react-redux";
 import {getRequestById} from "../../api/get.api";
@@ -8,10 +8,12 @@ export const Application = ({content, setActive}) => {
 
   let text = content.description
   const dispatch = useDispatch()
+  useEffect(() => {
+    getRequestById((content.id), res => res.data, (response) => {
+      setTickets(response)
+    })
+  }, [])
 
-  getRequestById((content.id), res => res.data, (response) => {
-    setTickets(response)
-  })
 
   let priority = content.userRequestPriority.id
   const priorityText = () => {
@@ -41,6 +43,9 @@ export const Application = ({content, setActive}) => {
   }
   return (
     <div className="application" onClick={() => {
+      getRequestById((content.id), res => res.data, (response) => {
+        setTickets(response)
+      })
       dispatch({type: "GOTTEN_ID", id: tickets})
       setActive(true)
     }}>
