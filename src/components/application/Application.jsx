@@ -21,11 +21,11 @@ export const Application = ({content, setActive}) => {
       case 1:
         return "экстренно";
       case 2:
-        return "важно";
+        return "нейтрально";
       case 3:
         return "нормально";
       case 4:
-        return "нейтрально";
+        return "важно";
     }
   }
 
@@ -34,11 +34,11 @@ export const Application = ({content, setActive}) => {
       case 1:
         return "urgentlyPriority"
       case 2:
-        return "importantPriority"
+        return "neutralPriority"
       case 3:
         return "normalPriority"
       case 4:
-        return "neutralPriority"
+        return "importantPriority"
     }
   }
   return (
