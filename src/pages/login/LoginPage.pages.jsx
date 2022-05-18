@@ -20,15 +20,6 @@ export const LoginPage = () => {
     signIn(user, () => navigate(fromPage, { replace: true }));
   };
 
-  const incorrectPasswordClass = () => {
-    if (incorrectPassword === true) {
-      return 'incorrectPassword display'
-    }
-    if (incorrectPassword === false) {
-      return 'incorrectPassword hidden'
-    }
-  }
-
   return (
     <div className="loginContainer">
       <div className="loginBlock">
@@ -50,7 +41,7 @@ export const LoginPage = () => {
           <input type="name" className="loginInput" value={login} onChange={event => setLogin(event.target.value)}/>
           <h5 className="loginText">Пароль:</h5>
           <input type="password" className="loginInput" value={password} onChange={event => setPassword(event.target.value)} />
-          <p className={incorrectPasswordClass()}>Неправильно введен логин или пароль</p>
+          <p className={incorrectPassword ? 'incorrectPassword display' : 'incorrectPassword hidden'}>Неправильно введен логин или пароль</p>
           <button className="loginButton" >Продолжить</button>
         </form>
       </div>
