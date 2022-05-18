@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 export const Header = () => {
   return (
-    <header>
+    <header className='headerFixed'>
       <nav>
         <ul>
           <li>
