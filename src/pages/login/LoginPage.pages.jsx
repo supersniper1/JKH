@@ -30,8 +30,8 @@ export const LoginPage = () => {
             'login': login,
             'password': password
           },
-            (response) => handleLogin(response.data.token),
-            (error => setIncorrectPassword(true))
+            handleLogin,
+            setIncorrectPassword(true)
             )
 
           setPassword('')
