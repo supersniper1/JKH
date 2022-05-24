@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.sass';
 import {
   ApplicationsPage,
@@ -15,10 +15,13 @@ import {
 } from "react-router-dom";
 import { RequireAuth } from "./utils/auth/requireAuth";
 import { AuthProvider } from "./utils/auth/authProvider";
+import {ModalApplication} from "./components/modal.application/ModalApplication";
+import {Modal} from "./components/modal/Modal.components";
 
 
 export default function App() {
 
+  const [modalActive, setModalActive] = useState(false)
 
   return (
     <AuthProvider>
@@ -30,7 +33,7 @@ export default function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/applications' element={
             <RequireAuth>
-              <ApplicationsPage />
+              <ApplicationsPage setActive={setModalActive} />
             </RequireAuth>
           } />
           <Route path='/finished-applications' element={
@@ -45,6 +48,9 @@ export default function App() {
           } />
         </Routes>
       </Router>
+      <Modal active={modalActive} setActive={setModalActive}>
+        <ModalApplication setActive={setModalActive} />
+      </Modal>
     </AuthProvider>
   );
 }

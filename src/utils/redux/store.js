@@ -1,18 +1,16 @@
 import {createStore} from "redux";
 
 const defaultState = {
-  reduxStorage: null,
+  id: 1,
 }
 
-const JWTChanger = (state = defaultState, action) => {
+const gottenId = (state = defaultState, action) => {
   switch (action.type) {
-    case 'SET_KEY':
-      return {...state, reduxStorage: action.token}
-    case 'REMOVE_KEY':
-      return {...state, reduxStorage: action.token}
+    case "GOTTEN_ID":
+      return {...state, id: action.id}
     default:
       return state
   }
 }
 
-export const store = createStore(JWTChanger)
+export const store = createStore(gottenId)
